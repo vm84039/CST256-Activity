@@ -19,9 +19,18 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return phpinfo();
 });
-    Route::get('/helloworld', function () {
-        return view('helloworld');
+Route::get('/helloworld', function () {
+    return view('helloworld');
  });
+ Route::get('/loginPassed2', function ()
+{
+    return view('loginPassed2');
+});
+ Route::get('/loginFailed', function ()
+ {
+     return view('loginFailed');
+ });
+        
 Route::get('/test', 'App\Http\Controllers\TestController@test2');
 //Route::get('whoami','App\Http\Controllers\WhatsMyNameController@index'); 
 Route::Post('whoami','App\Http\Controllers\WhatsMyNameController@index'); 
@@ -43,10 +52,6 @@ Route::get('/login3', function ()
 Route::get('/logoff', function () { return view('login3'); }); 
 Route::resource('/usersrest', 'App\Http\Controllers\UsersRestController');
 Route::get('/api', 'App\Http\Controllers\RestClientController@index');
-Route::get('/loginPassed2', function ()
-{
-    return view('LoginPassed2');
-});
 
 
 
