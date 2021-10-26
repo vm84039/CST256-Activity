@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 use App\Services\Utility\MyLogger1;
 use Carbon\Exceptions\Exception;
+use Illuminate\Support\Facades\Log;
 
 
 class SecurityDAO
@@ -16,7 +17,7 @@ class SecurityDAO
        
         function dbConn()
         {
-            $logger = new MyLogger1();
+
             $DBServer = "nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
             $DBUser = "qwuvf62qrhpeivpb";
             $DBpassword ="bvn3840srjnlfth5";
@@ -25,9 +26,9 @@ class SecurityDAO
             $conn = mysqli_connect($DBServer, $DBUser, $DBpassword, $DBName);
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error()); // For failed SQL connections.
-                $logger->info("Connection Failed dbConn()");
+                LOG::info('Connection Failed dbConn()');
             }
-            $logger->info("Connection Successful dbConn()");
+            LOG::info('Connection Successful dbConn()');
             
             return $conn;
         }
