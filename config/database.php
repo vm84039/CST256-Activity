@@ -45,7 +45,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
+            'url' => env('JAWSDB_URL'),
             'host' => env('DB_HOST', 'nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'aj4dhiaafbxrg431'),
