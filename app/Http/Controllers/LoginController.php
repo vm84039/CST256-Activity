@@ -21,7 +21,7 @@ class LoginController extends Controller
         
         $logger = new MyLogger1();
         try {
-            Log::info("EnterLoginController::index()");
+            Log::error("EnterLoginController::index()");
             $logger->info("Entering LoginController::index()");
             $service = new SecurityService();
             $username = $request->input('username');//$this->validateForm($request);
