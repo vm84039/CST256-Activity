@@ -17,7 +17,7 @@ class MySecurityMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $logger = new MyLogger1();
+/*         $logger = new MyLogger1();
         $path = $request->path();
         $logger->info("Entering My Security Middleware in handle() at path: " . $path);
         $secureCheck = true;
@@ -31,7 +31,7 @@ class MySecurityMiddleware
             $logger->info("Leaving My Security Middleware in handle() doing a redirect back to login");
             return redirect('/login3');
         }
-        
+         */
         
         return $next($request);
     }
