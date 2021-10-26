@@ -35,7 +35,7 @@ class SecurityDAO
             $logger = new MyLogger1();
             try {
                 $logger->info("Entering SecurityDAO::index()" . ' ' . $user->getUsername() . ' ' . $user->getPassword());
-                $sql = ("SELECT id FROM activity2 WHERE username = '$username' and password = '$password'");
+                $sql = ("SELECT id FROM aj4dhiaafbxrg431.activity2 WHERE username = '$username' and password = '$password'");
                 $result = mysqli_query($this->conn, $sql);
                 $logger->info("Exit SecurityDAO::index()");
                 $count = mysqli_num_rows($result);
@@ -48,7 +48,7 @@ class SecurityDAO
     }
         public function findAllUsers()
         {
-            $response = DB::table('activity2')->get();
+            $response = DB::table('aj4dhiaafbxrg431.activity2')->get();
             $users = array_map(function ($user) {
                 $model = new UserModel($user->USERNAME, $user->PASSWORD);
                 $model->setId($user->ID);
@@ -59,7 +59,7 @@ class SecurityDAO
         }
         public function findbyUserID( $id)
         {
-            $response = DB::table('activity2')->where('ID', $id)->get();
+            $response = DB::table('aj4dhiaafbxrg431.activity2')->where('ID', $id)->get();
              if ($response->isEmpty()) {
                 $user = new UserModel("nouser", "nouser");
                 
