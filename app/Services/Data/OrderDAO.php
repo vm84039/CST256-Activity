@@ -9,10 +9,10 @@ class OrderDAO
     
     function dbConn()
     {
-        $DBServer = "localhost";
-        $DBUser = "root";
-        $DBpassword ="root";
-        $DBName = "activity3";
+        $DBServer = "nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+        $DBUser = "qwuvf62qrhpeivpb";
+        $DBpassword ="bvn3840srjnlfth5";
+        $DBName = "aj4dhiaafbxrg431";
         
         $conn = mysqli_connect($DBServer, $DBUser, $DBpassword, $DBName);
         if ($conn->connect_error) {
