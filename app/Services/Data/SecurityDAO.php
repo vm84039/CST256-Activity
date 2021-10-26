@@ -16,15 +16,19 @@ class SecurityDAO
        
         function dbConn()
         {
+            $logger = new MyLogger1();
             $DBServer = "nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
             $DBUser = "qwuvf62qrhpeivpb";
             $DBpassword ="bvn3840srjnlfth5";
             $DBName = "aj4dhiaafbxrg431";
             
             $conn = mysqli_connect($DBServer, $DBUser, $DBpassword, $DBName);
-            if ($conn->connect_error) {
-                echo "Failed";
+            if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error()); // For failed SQL connections.
+                $logger->info("Connection Failed dbConn()");
             }
+            $logger->info("Connection Successful dbConn()");
+            
             return $conn;
         }
         public function findbyUser(UserModel $user)
