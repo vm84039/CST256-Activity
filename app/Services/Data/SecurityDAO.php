@@ -39,10 +39,10 @@ class SecurityDAO
             $password = $user->getPassword();
             $logger = new MyLogger1();
             try {
-                $logger->info("Entering SecurityDAO::index()" . ' ' . $user->getUsername() . ' ' . $user->getPassword());
+                Log::info("Entering SecurityDAO::index()" . ' ' . $user->getUsername() . ' ' . $user->getPassword());
                 $sql = ("SELECT id FROM aj4dhiaafbxrg431.activity2 WHERE username = '$username' and password = '$password'");
                 $result = mysqli_query($this->conn, $sql);
-                $logger->info("Exit SecurityDAO::index()");
+                Log::info("Exit SecurityDAO::index()");
                 $count = mysqli_num_rows($result);
                 if($count == 1) {return true;}
                 return false;
