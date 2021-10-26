@@ -18,7 +18,7 @@ class SecurityDAO
         {
             $DBServer = "nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
             $DBUser = "qwuvf62qrhpeivpb";
-            $DBpassword ="	bvn3840srjnlfth5";
+            $DBpassword ="bvn3840srjnlfth5";
             $DBName = "aj4dhiaafbxrg431";
             
             $conn = mysqli_connect($DBServer, $DBUser, $DBpassword, $DBName);
