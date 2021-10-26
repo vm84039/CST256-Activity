@@ -1,4 +1,4 @@
-<?php
+<?php // CST-256 page by team.
 
 namespace Tests;
 
