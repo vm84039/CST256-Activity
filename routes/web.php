@@ -43,6 +43,10 @@ Route::get('/login3', function ()
 Route::get('/logoff', function () { return view('login3'); }); 
 Route::resource('/usersrest', 'App\Http\Controllers\UsersRestController');
 Route::get('/api', 'App\Http\Controllers\RestClientController@index');
+Route::get('/loginPassed2', function ()
+{
+    return view('LoginPassed2');
+});
 
 
 
