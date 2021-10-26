@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 use App\Services\Utility\MyLogger1;
 use Carbon\Exceptions\Exception;
-use Illuminate\Support\Facades\Log;
 
 
 class SecurityDAO
@@ -17,7 +16,7 @@ class SecurityDAO
        
         function dbConn()
         {
-
+            $logger = new MyLogger1();
             $DBServer = "nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
             $DBUser = "qwuvf62qrhpeivpb";
             $DBpassword ="bvn3840srjnlfth5";
@@ -26,9 +25,9 @@ class SecurityDAO
             $conn = mysqli_connect($DBServer, $DBUser, $DBpassword, $DBName);
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error()); // For failed SQL connections.
-                LOG::info('Connection Failed dbConn()');
+                $logger->info("Connection Failed dbConn()");
             }
-            LOG::info('Connection Successful dbConn()');
+            $logger->info("Connection Successful dbConn()");
             
             return $conn;
         }
@@ -39,10 +38,10 @@ class SecurityDAO
             $password = $user->getPassword();
             $logger = new MyLogger1();
             try {
-                Log::info("Entering SecurityDAO::index()" . ' ' . $user->getUsername() . ' ' . $user->getPassword());
+                $logger->info("Entering SecurityDAO::index()" . ' ' . $user->getUsername() . ' ' . $user->getPassword());
                 $sql = ("SELECT id FROM aj4dhiaafbxrg431.activity2 WHERE username = '$username' and password = '$password'");
                 $result = mysqli_query($this->conn, $sql);
-                Log::info("Exit SecurityDAO::index()");
+                $logger->info("Exit SecurityDAO::index()");
                 $count = mysqli_num_rows($result);
                 if($count == 1) {return true;}
                 return false;
